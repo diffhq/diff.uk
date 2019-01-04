@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "*.svg", "use": "@now/static" },
+    { "src": "*.md", "use": "@now/md" }
+  ]
+}
