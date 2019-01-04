@@ -2,6 +2,8 @@
   "version": 2,
   "builds": [
     { "src": "*.svg", "use": "@now/static" },
-    { "src": "*.md", "use": "@now/md" }
-  ]
+    { "src": "*.png", "use": "@now/static" },
+    { "src": "*.mdx", "use": "@now/mdx-deck" }
+  ],
+  "alias": ["diff.uk", "www.diff.uk"]
 }
