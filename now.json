@@ -1,9 +1,11 @@
 {
   "version": 2,
   "builds": [
-    { "src": "*.svg", "use": "@now/static" },
-    { "src": "*.png", "use": "@now/static" },
-    { "src": "*.mdx", "use": "@now/mdx-deck" }
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
   ],
   "alias": ["diff.uk", "www.diff.uk"]
 }
