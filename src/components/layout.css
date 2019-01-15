@@ -5,3 +5,27 @@ body {
   margin: 0;
   background: lavender;
 }
+
+footer {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 1.67rem;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 319px) {
+  html {
+    font-size: 8px;
+  }
+}

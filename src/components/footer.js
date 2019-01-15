@@ -11,9 +11,9 @@ const Footer = () => (
       }
     }) => (
       <Row>
-        <h5>
+        <footer>
           Diff Ltd <Em>|</Em> {address} <Em>|</Em> #{companyNumber}
-        </h5>
+        </footer>
       </Row>
     )}
   />

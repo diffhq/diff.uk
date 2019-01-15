@@ -22,9 +22,9 @@ const Index = () => (
           <Content>
             <h1 style={{ marginTop: 0, marginBottom: "0.4rem" }}>{header}</h1>
             <h2 style={{ marginTop: 0, marginBottom: "0.8rem" }}>{byline}</h2>
-            <strong>
+            <h3 style={{ marginTop: 0, marginBottom: "0.4rem" }}>
               <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-            </strong>
+            </h3>
           </Content>
         </Row>
       </Layout>
@@ -64,13 +64,13 @@ const Row = styled.div`
 
 const FluidImg = styled.img`
   width: 550px;
-  @media (max-width: 800px) {
-    width: 500px;
-  }
   @media (max-width: 600px) {
-    width: 450px;
+    width: 350px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 430px) {
+    width: 300px;
+  }
+  @media (max-width: 319px) {
     width: 250px;
   }
 `;
