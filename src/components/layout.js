@@ -12,7 +12,9 @@ const Layout = ({ children }) => (
 );
 
 const Page = styled.div`
-  min-height: 100vh;
+  background: lavender;
+  min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  min-height: var(--wh, 100vh);
   display: flex;
   flex-direction: column;
   align-items: center;
