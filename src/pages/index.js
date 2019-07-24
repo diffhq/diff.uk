@@ -10,7 +10,7 @@ const Index = () => (
     query={indexQuery}
     render={({
       site: {
-        siteMetadata: { header, byline, contactEmail }
+        siteMetadata: { header, byline, contactEmail, contractors }
       }
     }) => (
       <Layout>
@@ -27,6 +27,13 @@ const Index = () => (
             </h3>
           </Content>
         </Row>
+        <Row>
+          <Content>
+            {contractors.map(contractor => (
+              <Contractor {...contractor} />
+            ))}
+          </Content>
+        </Row>
       </Layout>
     )}
   />
@@ -39,10 +46,31 @@ const indexQuery = graphql`
         header
         byline
         contactEmail
+        contractors {
+          name
+          level
+          engagementEnd
+        }
       }
     }
   }
 `;
+const Contractor = ({ name, engagementEnd, level }) => {
+  return (
+    <Content>
+      <h3>{name}...</h3>
+      <h4>{level}</h4>
+      <h4>
+        {engagementEnd
+          ? `...is engaged through ${new Date(engagementEnd).toLocaleDateString(
+              "en-GB"
+            )}`
+          : "...is Available!"}
+      </h4>
+    </Content>
+  );
+};
+
 const Content = styled.div`
   @media (max-width: 1280px) {
     display: flex;

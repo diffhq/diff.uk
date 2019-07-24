@@ -8,7 +8,14 @@ module.exports = {
     byline: "Specializing in React and Node",
     contactEmail: "hello@diff.uk",
     address: "1 Concourse Way, Sheffield, England, S1 2BJ",
-    companyNumber: "11749046"
+    companyNumber: "11749046",
+    contractors: [
+      {
+        name: "Jedd Fenner",
+        engagementEnd: "2019-12-30",
+        level: "Senior Developer"
+      }
+    ]
   },
   plugins: [
     "gatsby-plugin-react-helmet",
