@@ -4,10 +4,10 @@ import Footer from "./footer.js";
 
 import "../components/layout.css";
 
-const Layout = ({ children }) => (
+const Layout = ({ children, address, companyNumber }) => (
   <Page>
     <Content>{children}</Content>
-    <Footer />
+    <Footer {...{ address, companyNumber }} />
   </Page>
 );
 

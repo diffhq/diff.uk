@@ -7,5 +7,13 @@
       "config": { "distDir": "public" }
     }
   ],
-  "alias": ["diff.uk", "www.diff.uk"]
+  "alias": ["diff.uk", "www.diff.uk"],
+  "build": {
+    "env": {
+      "CONTENTFUL_ACCESS_TOKEN": "@contentful-access-token",
+      "CONTENTFUL_COMPANY_ID": "@contentful-company-id",
+      "CONTENTFUL_HOST": "@contentful-host",
+      "CONTENTFUL_SPACE_ID": "@contentful-space-id"
+    }
+  }
 }

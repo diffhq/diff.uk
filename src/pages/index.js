@@ -3,43 +3,59 @@ import logo from "../images/diff.svg";
 import SEO from "../components/seo.js";
 import Layout from "../components/layout.js";
 import styled from "styled-components";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql } from "gatsby";
 
-const Index = () => (
-  <StaticQuery
-    query={indexQuery}
-    render={({
-      site: {
-        siteMetadata: { header, byline, contactEmail }
-      }
-    }) => (
-      <Layout>
-        <SEO />
-        <Row>
-          <Content style={{ margin: "1.45rem" }}>
-            <FluidImg src={logo} alt="logo" />
-          </Content>
-          <Content>
-            <h1 style={{ marginTop: 0, marginBottom: "0.4rem" }}>{header}</h1>
-            <h2 style={{ marginTop: 0, marginBottom: "0.8rem" }}>{byline}</h2>
-            <h3 style={{ marginTop: 0, marginBottom: "0.4rem" }}>
-              <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
-            </h3>
-          </Content>
-        </Row>
-      </Layout>
-    )}
-  />
-);
+const IndexPage = ({
+  data: {
+    contentfulCompany: {
+      type,
+      byline,
+      contactEmail,
+      name,
+      description,
+      twitterHandle,
+      address,
+      companyNumber
+    }
+  }
+}) => {
+  return (
+    <Layout {...{ address, companyNumber }}>
+      <SEO {...{ name, description, twitterHandle }} />
+      <Row>
+        <Content style={{ margin: "1.45rem" }}>
+          <FluidImg src={logo} alt="logo" />
+        </Content>
+        <Content>
+          <h1 style={{ marginTop: 0, marginBottom: "0.4rem" }}>{type}</h1>
+          <h2 style={{ marginTop: 0, marginBottom: "0.8rem" }}>{byline}</h2>
+          <h3 style={{ marginTop: 0, marginBottom: "0.4rem" }}>
+            <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+          </h3>
+        </Content>
+      </Row>
+    </Layout>
+  );
+};
 
-const indexQuery = graphql`
-  query IndexQuery {
-    site {
-      siteMetadata {
-        header
-        byline
-        contactEmail
+export const pageQuery = graphql`
+  query CompanyQuery($contentfulCompanyId: String!) {
+    contentfulCompany(id: { eq: $contentfulCompanyId }) {
+      type
+      byline
+      contactEmail
+      address {
+        line1
+        city
+        country
+        postcode
       }
+      companyNumber
+      name
+      description {
+        description
+      }
+      twitterHandle
     }
   }
 `;
@@ -75,4 +91,4 @@ const FluidImg = styled.img`
   }
 `;
 
-export default Index;
+export default IndexPage;
