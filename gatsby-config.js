@@ -1,3 +1,13 @@
+require("dotenv").config({
+  path: `.env`
+});
+
+const contentfulConfigOptions = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  host: process.env.CONTENTFUL_HOST
+};
+
 module.exports = {
   siteMetadata: {
     title: "Diff Ltd",
@@ -31,6 +41,10 @@ module.exports = {
         icon: "src/images/diff-compact-transp.png" // This path is relative to the root of the site.
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: "gatsby-source-contentful",
+      options: contentfulConfigOptions
+    }
   ]
 };
