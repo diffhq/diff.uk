@@ -7,6 +7,10 @@
       "config": { "distDir": "public" }
     }
   ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "status": 404, "dest": "404.html" }
+  ],
   "alias": ["diff.uk", "www.diff.uk"],
   "build": {
     "env": {
