@@ -12,7 +12,7 @@ const IndexPage = ({
       byline,
       contactEmail,
       name,
-      description,
+      description: { description },
       twitterHandle,
       address,
       companyNumber

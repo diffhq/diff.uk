@@ -9,17 +9,6 @@ const contentfulConfigOptions = {
 };
 
 module.exports = {
-  siteMetadata: {
-    title: "Diff Ltd",
-    description:
-      "Javascript consultancy based in Sheffield, England. Specializing in React and Node.",
-    author: "@diffhq",
-    header: "Javascript Consultancy",
-    byline: "Specializing in React and Node",
-    contactEmail: "hello@diff.uk",
-    address: "1 Concourse Way, Sheffield, England, S1 2BJ",
-    companyNumber: "11749046"
-  },
   plugins: [
     "gatsby-plugin-react-helmet",
     {
