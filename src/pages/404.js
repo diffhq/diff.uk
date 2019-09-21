@@ -1,14 +1,47 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
+const NotFoundPage = ({
+  data: {
+    contentfulCompany: {
+      name,
+      description: { description },
+      twitterHandle,
+      address,
+      companyNumber
+    }
+  }
+}) => (
+  <Layout {...{ address, companyNumber }}>
+    <SEO title="404: Not found" {...{ name, description, twitterHandle }} />
     <h1>404 NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist...</p>
+    <p>
+      There aren't any other pages on this site I'm afraid! Best just heading
+      back to the <Link to="/">homepage</Link>...
+    </p>
   </Layout>
 );
+
+export const pageQuery = graphql`
+  query FourOhFourQuery($contentfulCompanyId: String!) {
+    contentfulCompany(id: { eq: $contentfulCompanyId }) {
+      address {
+        line1
+        city
+        country
+        postcode
+      }
+      companyNumber
+      name
+      description {
+        description
+      }
+      twitterHandle
+    }
+  }
+`;
 
 export default NotFoundPage;

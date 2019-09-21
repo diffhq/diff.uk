@@ -39,7 +39,7 @@ const IndexPage = ({
 };
 
 export const pageQuery = graphql`
-  query CompanyQuery($contentfulCompanyId: String!) {
+  query IndexQuery($contentfulCompanyId: String!) {
     contentfulCompany(id: { eq: $contentfulCompanyId }) {
       type
       byline
