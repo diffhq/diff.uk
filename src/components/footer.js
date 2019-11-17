@@ -1,11 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Footer = ({ address, companyNumber }) => (
+const Footer = ({ name, address, companyNumber }) => (
   <Row>
     <footer>
-      Diff Ltd <Em>|</Em> {Object.values(address || {}).join(", ")} <Em>|</Em> #
-      {companyNumber}
+      {name} <Em>|</Em>{" "}
+      {Object.values(address || {})
+        .filter(Boolean)
+        .join(", ")}{" "}
+      <Em>|</Em> #{companyNumber}
     </footer>
   </Row>
 );

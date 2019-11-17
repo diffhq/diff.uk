@@ -20,7 +20,7 @@ const IndexPage = ({
   }
 }) => {
   return (
-    <Layout {...{ address, companyNumber }}>
+    <Layout {...{ name, address, companyNumber }}>
       <SEO {...{ name, description, twitterHandle }} />
       <Row>
         <Content style={{ margin: "1.45rem" }}>
@@ -46,6 +46,7 @@ export const pageQuery = graphql`
       contactEmail
       address {
         line1
+        line2
         city
         country
         postcode

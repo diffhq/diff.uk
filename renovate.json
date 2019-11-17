@@ -1,7 +1,8 @@
 {
-  "extends": [
-    "config:base"
-  ],
+  "extends": ["config:base"],
   "automerge": true,
-  "automergeType": "branch"
+  "automergeType": "branch",
+  "major": {
+    "automerge": false
+  }
 }
