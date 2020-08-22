@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jedd Fenner <jedd@diff.uk>",
   "dependencies": {
-    "babel-plugin-styled-components": "1.10.6",
+    "babel-plugin-styled-components": "1.11.1",
     "dotenv": "8.2.0",
     "gatsby": "2.19.22",
     "gatsby-plugin-manifest": "2.2.42",
