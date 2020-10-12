@@ -15,9 +15,9 @@ const IndexPage = ({
       description: { description },
       twitterHandle,
       address,
-      companyNumber
-    }
-  }
+      companyNumber,
+    },
+  },
 }) => {
   return (
     <Layout {...{ name, address, companyNumber }}>
@@ -39,8 +39,8 @@ const IndexPage = ({
 };
 
 export const pageQuery = graphql`
-  query IndexQuery($contentfulCompanyId: String!) {
-    contentfulCompany(id: { eq: $contentfulCompanyId }) {
+  query IndexQuery {
+    contentfulCompany(name: { regex: "/diff/i" }) {
       type
       byline
       contactEmail

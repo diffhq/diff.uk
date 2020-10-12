@@ -11,9 +11,9 @@ const NotFoundPage = ({
       description: { description },
       twitterHandle,
       address,
-      companyNumber
-    }
-  }
+      companyNumber,
+    },
+  },
 }) => (
   <Layout {...{ address, companyNumber }}>
     <SEO title="404: Not found" {...{ name, description, twitterHandle }} />
@@ -26,8 +26,8 @@ const NotFoundPage = ({
 );
 
 export const pageQuery = graphql`
-  query FourOhFourQuery($contentfulCompanyId: String!) {
-    contentfulCompany(id: { eq: $contentfulCompanyId }) {
+  query FourOhFourQuery {
+    contentfulCompany(name: { regex: "/diff/i" }) {
       address {
         line1
         city

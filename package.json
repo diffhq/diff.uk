@@ -20,7 +20,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "now-build": "npm run build",
+    "vercel-build": "npm run build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "test": "echo \"Error: no test specified\" && exit 1"
